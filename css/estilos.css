@@ -1,0 +1,912 @@
+/* Menores a 576px 
+aplica a todo aquello que no sea 
+reescrito en MediaQueries */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FCFCF7 !important;
+  font-family: 'Poppins', sans-serif !important;
+  color: #222223 !important;
+}
+
+/* NAVBAR */
+header .topBar {
+  display: none;
+}
+
+header .navBar {
+  display: none;
+}
+
+header .navBarCelu {
+  display: none;
+}
+
+header .showMenu .navBarCelu {
+  background-color: #25282A;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 7777;
+  animation: slideInFromLeft 0.5s ease-in-out;
+}
+
+header .showMenu .navBarCelu .imgLogotipo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 10vh;
+}
+
+header .showMenu .navBarCelu img {
+  width: 200px;
+  padding-left: 10px;
+}
+
+header .showMenu .navBarCelu .itemsMenuCelu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 50vh;
+
+}
+
+header .showMenu .navBarCelu a {
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #FCFCF7;
+  font-size: 22px;
+  padding-left: 30px;
+}
+
+header .showMenu .navBarCelu .navBarRRSS {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+
+  height: 15vh;
+}
+
+header .showMenu .navBarCelu a:hover {
+  transition: 0.2s;
+  color: #E20034;
+}
+
+header .showMenu .navBarCelu .navBarRRSS a {
+  text-decoration: none;
+  color: #FCFCF7;
+  font-size: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+header .showMenu .navBarCelu .navBarRRSS a:hover {
+  transition: 0.2s;
+  color: #E20034;
+}
+
+/* MENU BOTÓN TOGGLE */
+header .toggle {
+  width: 60px;
+  /* reducido en 10px */
+  height: 60px;
+  /* reducido en 10px */
+  background-color: rgba(252, 252, 247, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  right: 25px;
+  top: 25px;
+  overflow: hidden;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  z-index: 8888;
+}
+
+.toggle span {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 4px;
+  background: #E20034;
+  border-radius: 10px;
+  transition: 0.5s;
+  ;
+}
+
+/* ANIMACIÓN TOGGLE */
+.toggle span:nth-child(1) {
+  transform: translateY(-15px);
+  width: 30px;
+  /* left: 15px; */
+}
+
+.toggle.active span:nth-child(1) {
+  width: 40px;
+  transform: translateY(1px) rotate(45deg);
+  transition-delay: 0.125s;
+}
+
+.toggle span:nth-child(2) {
+  /* transform: translateY(15px); */
+  width: 30px;
+  /* left: 15px; */
+}
+
+.toggle.active span:nth-child(2) {
+  width: 40px;
+  transform: translateY(-2px) rotate(315deg);
+  transition-delay: 0.25s;
+}
+
+.toggle span:nth-child(3) {
+  transform: translateY(15px);
+  width: 30px;
+  /* left: 15px; */
+}
+
+.toggle.active span:nth-child(3) {
+  transform: translateX(70px);
+  transition: 0.5s ease-in-out;
+}
+
+/* MAIN */
+main {
+  background: rgb(41,128,185);
+background: linear-gradient(118deg, rgba(41,128,185,1) 30%, rgba(109,213,250,1) 74%);
+  height: 100vh;
+  padding-top: 20px;
+}
+
+main .principal {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+  margin-left: 0;
+  margin-right: 0;
+
+}
+
+main .principal .principal1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main .principal .principal1 .textPrincipal {
+  opacity: 0;
+  /* Inicialmente establecemos la opacidad en 0 */
+  transition: opacity 0.3s ease-in-out;
+  /* Ajusta la duración y la función de temporización según tus preferencias */
+
+}
+
+main .principal .principal1 .textPrincipal.show {
+  font-family: 'Crimson Pro', serif;
+  color: #25282A;
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  opacity: 1;
+
+  /* Desplazamiento horizontal, desplazamiento vertical, desenfoque y color de la sombra */
+  text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.8);
+}
+
+main .principal .principal1 .logotipoH1 {
+  display: none;
+
+}
+
+main .principal .principal1 .logotipoH1.visible {
+  filter: drop-shadow(3px 5px 6px #bfbebe);
+  padding-bottom: 10px;
+  display: block;
+}
+
+main .principal .principal1 .btnPrincipal {
+  display: none;
+}
+
+main .principal .principal1 .btnPrincipal.visible {
+  display: inline-block;
+  transition: .5s ease-in-out;
+  margin-top: 30px;
+}
+
+main .principal .principal1 .btnPrincipal a {
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  color: #FCFCF7;
+}
+
+main .principal .principal1 .btnPrincipal:hover {
+  background-color: #FCFCF7;
+  border-color: #E20034;
+  border-width: 1px;
+  border-radius: 5px;
+  color: #E20034;
+}
+
+/* QUE HACEMOS */
+.contenedorQueHacemos {
+  padding-top: 30px;
+  width: 100%;
+}
+
+.contenedorQueHacemos h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 10px;
+  display: none;
+}
+
+.contenedorQueHacemos .contenidoQueHacemos .contenedorImgQueHacemos {
+  width: 90%;
+  margin: 0 auto;
+  display: none;
+}
+
+.contenedorQueHacemos .contenidoQueHacemos .contenedorImgQueHacemos .imgQueHacemos {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.contenedorQueHacemos .contenidoQueHacemos .contenedorTrabajos {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.contenedorQueHacemos .contenidoQueHacemos .contenedorTrabajos .trabajos {
+  text-align: left;
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+.contenedorQueHacemos .contenidoQueHacemos .contenedorTrabajos .trabajos li {
+  list-style: none;
+  padding: 5px;
+  background-color: rgba(252, 252, 247, 0.9);
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 4px 3px 4px 0px rgb(34, 34, 35);
+}
+
+.contenedorQueHacemos .contenidoQueHacemos .contenedorTrabajos .trabajos li:last-child {
+  list-style: none;
+  padding: 5px;
+  background-color: #25282A;
+  color: #FCFCF7;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.contenedorQueHacemos .contenidoQueHacemos .contenedorTrabajos .trabajos li:last-child a {
+  text-decoration: none;
+  color: #FCFCF7;
+}
+
+.contenedorQueHacemos .contenidoQueHacemos .contenedorTrabajos .trabajos li:hover {
+  transform: translateX(3px);
+  transition: 0.3s;
+}
+
+.linkPortfolio {
+  color: #FCFCF7;
+  background: #222223;
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  padding: 5px;
+
+}
+
+.linkPortfolio .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkPortfolio .arrow {
+  margin-top: 1px;
+  width: 10px;
+  background: #222223;
+  height: 2px;
+  position: relative;
+  transition: 0.2s;
+
+}
+
+.linkPortfolio .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid #FCFCF7;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.linkPortfolio:hover {
+  background-color: #25282A;
+}
+
+.linkPortfolio:hover .arrow {
+  background: #FCFCF7;
+
+}
+
+.linkPortfolio:hover .arrow::before {
+  right: 0;
+}
+
+/* CLIENTES */
+.contenedorClientes {
+  padding-top: 30px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.contenedorClientes h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 30px;
+}
+
+.contenedorClientes .contenidoClientes {
+  width: 400%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  /* Crea 12 columnas con el mismo ancho */
+  /* Espacio entre las imágenes (ajusta según tus necesidades) */
+  overflow: hidden;
+  /* oculta las imágenes que están fuera del ancho máximo */
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+
+.contenedorClientes .contenidoClientes .itemCliente {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  border-radius: 5px;
+}
+
+
+/* CONTACTO */
+.contenedorContacto {
+  background: rgb(0,4,40);
+background: linear-gradient(118deg, rgba(0,4,40,1) 30%, rgba(0,78,146,1) 74%);
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.contenedorContacto h2 {
+  font-family: 'Poppins', sans-serif;
+  color: #FCFCF7;
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.contenedorContacto .contenidoContacto div .imagenFormulario {
+  display: none;
+}
+
+.contenedorContacto .contenidoContacto .svgFormulario {
+  margin: 0 auto;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contenedorContacto .contenidoContacto .svgFormulario img {
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.contenedorContacto .contenidoContacto .formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contenedorContacto .contenidoContacto .formulario .btnEnviar {
+  margin: 10px;
+  align-self: flex-end;
+  background-color: #222223;
+  color: #FCFCF7;
+}
+
+.contenedorContacto .contenidoContacto .formulario .btnEnviar:hover {
+  background-color: #bfbebe;
+  color: #222223;
+
+}
+
+
+
+/*Boton Volver Arriba*/
+.btn-volver-arriba {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 30%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99999;
+  margin-right: -60px;
+  transition: all 0.4s ease;
+}
+
+.btn-volver-arriba a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 30%;
+  text-align: center;
+}
+
+.btn-volver-arriba a i {
+  font-size: 1rem;
+  color: #fff;
+  line-height: 40px;
+}
+
+
+/*ANIMACIÓN loading */
+.loading {
+  height: 2px;
+  background-color: #E20034;
+  animation-name: movingLeft;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes movingLeft {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+
+/* Entre 576px y 767px */
+/* Bootstrap breakpoints SM y superiores */
+@media (min-width: 576px) {
+
+  /* MAIN */
+  main .principal .principal1 .textPrincipal.show {
+    font-size: 45px;
+  }
+
+  /* CONTACTO */
+
+  .contenedorContacto .contenidoContacto .formulario {
+
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+ }
+
+/* Entre 768px y 991px */
+/* Bootstrap breakpoints MD y superiores */
+@media (min-width: 768px) {
+
+  /* MAIN */
+
+  /* QUÉ HACEMOS */
+  .contenedorQueHacemos {
+    background-image: url('../img/queHacemos.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 5px;
+  }
+
+  .contenedorQueHacemos h2 {
+    color: #FCFCF7;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    font-size: 40px;
+  }
+
+  .contenedorQueHacemos .contenidoQueHacemos .contenedorImgQueHacemos .imgQueHacemos {
+    display: none;
+  }
+
+  .contenedorQueHacemos .contenidoQueHacemos .contenedorTrabajos {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  /* CLIENTES */
+  .contenedorClientes h2 {
+    font-size: 40px;
+  }
+
+  /* CONTACTO */
+
+  .contenedorContacto h2 {
+    font-size: 40px;
+  }
+
+  .contenedorContacto .contenidoContacto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contenedorContacto .contenidoContacto .svgFormulario {
+    margin: 0 auto;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contenedorContacto .contenidoContacto .formulario {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+
+
+}
+
+/*Pantalla Desktop*/
+@media (min-width: 992px) {
+
+  /* TOPBAR */
+  header .topBar {
+    /* disposición del contenido del topbar */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    /* estilos del contenido de topbar */
+    background-color: #f9f6ee;
+    font-family: 'Poppins', sans-serif;
+    height: 30px;
+  }
+
+  header .topBar a {
+    color: #0A2E36;
+    text-decoration: none;
+    padding-right: 50px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  /* NAVBAR */
+  header .navBar {
+    background-color: transparent;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    z-index: 22222;
+  }
+
+  header .navBar .navBarLogotipo {
+    width: 20%;
+    padding-left: 20px;
+  }
+
+  header .navBar .navBarMenu {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-right: 20px;
+  }
+
+  header .navBar div img {
+    width: 200px;
+  }
+
+  header .navBar a {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #222223;
+    font-weight: 400;
+  }
+
+  #imgLogotipoGris {
+    display: none;
+  }
+
+  header .fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #25282A;
+    color: #FCFCF7;
+    z-index: 5555555;
+
+    /* Sombra para resaltar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+
+    /* Duración, transición y tipo de animación */
+    animation: slideDown 0.7s ease;
+  }
+
+  header .fixed a {
+    color: #FCFCF7;
+  }
+
+
+  header .toggle {
+    display: none;
+  }
+
+  .itemMenu:hover {
+    transition: 0.2s;
+    color: #E20034;
+    border-bottom-style: solid;
+    border-bottom-width: 0.3px;
+    border-bottom-color: #E20034;
+  }
+
+  .containerNavBar {
+    display: none;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  /* MAIN */
+
+  main {
+    background: rgb(41,128,185);
+background: linear-gradient(118deg, rgba(41,128,185,1) 30%, rgba(109,213,250,1) 74%);
+    z-index: 1;
+    top: -50px;
+    left: 0;
+  }
+
+  main .principal {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  main .principal .principal1 {
+    align-items: flex-start;
+    width: 60%;
+    padding-left: 20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  main .principal .principal1 .textPrincipal.show {
+    text-align: left;
+    font-size: 55px;
+  }
+
+  main .principal .principal1 .logotipoH1 {
+    display: none;
+  }
+
+  main .principal .principal1 .logotipoH1.visible {
+    display: none;
+  }
+
+  main .principal .imgMainMobile {
+    display: none;
+  }
+
+  main .principal .principal1 .btnPrincipal {
+    z-index: 2;
+  }
+
+  /* QUÉ HACEMOS */
+
+  .contenedorQueHacemos h2 {
+    padding-top: 20px;
+    font-size: 50px;
+  }
+
+  .contenedorQueHacemos .contenidoQueHacemos .contenedorTrabajos {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .contenedorQueHacemos .contenidoQueHacemos .contenedorTrabajos .trabajos {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  /* CLIENTES */
+
+  .contenedorClientes {
+    padding-top: 30px;
+    overflow: hidden;
+  }
+
+  .contenedorClientes h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 50px;
+  }
+
+  .contenedorClientes .contenidoClientes {
+    width: 200%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    /* Espacio entre las imágenes (ajusta según tus necesidades) */
+    overflow: hidden;
+    /* oculta las imágenes que están fuera del ancho máximo */
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+
+  .contenedorClientes .contenidoClientes .itemCliente {
+    width: 50%;
+    margin: 0 auto;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    border-radius: 5px;
+  }
+
+
+  /* CONTACTO */
+  .contenedorContacto .contenidoContacto {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .contenedorContacto h2 {
+    font-size: 50px;
+  }
+
+  .contenedorContacto .contenidoContacto .svgFormulario {
+    margin: 0 auto;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contenedorContacto .contenidoContacto .formulario {
+    width: 50%;
+    margin: 0 auto;
+    align-items: normal;
+  }
+
+ 
+}
+
+/* Desde 1200px en adelante */
+/* Bootstrap breakpoints LG y superiores */
+@media (min-width: 1200px) {
+  /* Tus estilos para dispositivos extra large y superiores van aquí */
+
+  
+}
+
+
+/*ANIMATIONS*/
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
